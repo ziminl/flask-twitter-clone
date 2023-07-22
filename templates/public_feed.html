@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Public Feed</title>
+</head>
+<body>
+    <h1>Public Feed</h1>
+    <p>Here are the latest public tweets:</p>
+    {% for tweet in tweets %}
+        <div>
+            <p>{{ tweet['tweet_text'] }}</p>
+            <p>Posted by: {{ tweet['username'] }}</p>
+            <p>Posted at: {{ tweet['created_at'] }}</p>
+            <hr>
+        </div>
+    {% endfor %}
+</body>
+</html>
