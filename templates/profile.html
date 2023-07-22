@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Profile</h1>
+    <h2>Welcome, {{ user['username'] }}!</h2>
+    <img src="{{ url_for('static', filename='uploads/' + user['avatar_url']) }}" alt="Avatar">
+    <p>Name: {{ user['name'] }}</p>
+    <p>Bio: {{ user['bio'] }}</p>
+    <h2>Your Tweets</h2>
+    {% for tweet in tweets %}
+        <div>
+            <p>{{ tweet['tweet_text'] }}</p>
+            <p>Posted at: {{ tweet['created_at'] }}</p>
+            <hr>
+        </div>
+    {% endfor %}
+</body>
+</html>
