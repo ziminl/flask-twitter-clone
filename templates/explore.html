@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twitter Clone - Explore</title>
+</head>
+<body>
+    <h1>Explore</h1>
+    <h2>Trending Topics</h2>
+    <ul>
+        {% for topic in trending_topics %}
+            <li>{{ topic.topic }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Popular Users</h2>
+    <ul>
+        {% for user in popular_users %}
+            <li>
+                <strong>{{ user.username }}</strong> - {{ user.name }}
+                <small>Followers: {{ user.follower_count }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
